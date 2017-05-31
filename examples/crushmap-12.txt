@@ -1,0 +1,326 @@
+# begin crush map
+tunable choose_local_tries 0
+tunable choose_local_fallback_tries 0
+tunable choose_total_tries 50
+tunable chooseleaf_descend_once 0
+tunable chooseleaf_vary_r 0
+
+# devices
+device 0 osd.0
+device 1 osd.1
+device 2 osd.2
+device 3 osd.3
+device 4 osd.4
+device 5 osd.5
+device 6 osd.6
+device 7 osd.7
+device 8 osd.8
+device 9 osd.9
+device 10 osd.10
+device 11 osd.11
+device 12 osd.12
+device 13 osd.13
+device 14 osd.14
+device 15 osd.15
+device 16 osd.16
+device 17 osd.17
+device 18 osd.18
+device 19 osd.19
+device 20 osd.20
+device 21 osd.21
+device 22 osd.22
+device 23 osd.23
+device 24 osd.24
+device 25 osd.25
+device 26 osd.26
+device 27 osd.27
+device 28 osd.28
+device 29 osd.29
+device 30 osd.30
+device 31 osd.31
+device 32 osd.32
+device 33 osd.33
+device 34 osd.34
+device 35 osd.35
+device 36 osd.36
+device 37 osd.37
+device 38 osd.38
+device 39 osd.39
+device 40 osd.40
+device 41 osd.41
+device 42 osd.42
+device 43 osd.43
+device 44 osd.44
+device 45 osd.45
+device 46 osd.46
+device 47 osd.47
+device 48 osd.48
+device 49 osd.49
+device 50 osd.50
+device 51 osd.51
+device 52 osd.52
+device 53 osd.53
+device 54 osd.54
+device 55 osd.55
+device 56 osd.56
+device 57 osd.57
+device 58 osd.58
+device 59 osd.59
+device 60 osd.60
+device 61 osd.61
+device 62 osd.62
+device 63 osd.63
+device 64 osd.64
+device 65 osd.65
+device 66 osd.66
+device 67 osd.67
+device 68 osd.68
+device 69 osd.69
+device 70 osd.70
+device 71 osd.71
+device 72 osd.72
+device 73 osd.73
+device 74 osd.74
+device 75 osd.75
+device 76 osd.76
+device 77 osd.77
+device 78 osd.78
+device 79 osd.79
+device 80 osd.80
+device 81 osd.81
+device 82 osd.82
+device 83 osd.83
+device 84 osd.84
+device 85 osd.85
+device 86 osd.86
+device 87 osd.87
+
+# types
+type 0 osd
+type 1 host
+type 2 chassis
+type 3 rack
+type 4 row
+type 5 room
+type 6 datacenter
+type 7 region
+type 8 root
+
+# buckets
+host host-0 {
+	alg straw
+	hash 0
+	item osd.0 weight 4.942078
+	item osd.1 weight 3.411810
+	item osd.2 weight 4.480530
+	item osd.3 weight 6.523609
+	item osd.4 weight 4.874317
+	item osd.5 weight 7.333418
+	item osd.6 weight 9.879138
+	item osd.7 weight 7.795387
+}
+host host-1 {
+	alg straw
+	hash 0
+	item osd.8 weight 1.521634
+	item osd.9 weight 4.828806
+}
+host host-2 {
+	alg straw
+	hash 0
+	item osd.10 weight 9.920959
+	item osd.11 weight 1.641255
+	item osd.12 weight 5.884252
+	item osd.13 weight 0.792470
+}
+host host-3 {
+	alg straw
+	hash 0
+	item osd.14 weight 3.285019
+	item osd.15 weight 7.853756
+	item osd.16 weight 2.010443
+	item osd.17 weight 7.488746
+}
+host host-4 {
+	alg straw
+	hash 0
+	item osd.18 weight 5.336407
+	item osd.19 weight 1.039090
+	item osd.20 weight 0.173272
+	item osd.21 weight 8.885232
+	item osd.22 weight 3.750531
+	item osd.23 weight 4.150527
+	item osd.24 weight 2.712788
+	item osd.25 weight 8.305574
+	item osd.26 weight 0.506193
+}
+host host-5 {
+	alg straw
+	hash 0
+	item osd.27 weight 7.542333
+	item osd.28 weight 5.982420
+	item osd.29 weight 0.204009
+	item osd.30 weight 9.932821
+	item osd.31 weight 0.924497
+	item osd.32 weight 3.615819
+}
+host host-6 {
+	alg straw
+	hash 0
+	item osd.33 weight 4.413352
+	item osd.34 weight 7.448106
+	item osd.35 weight 8.490136
+	item osd.36 weight 1.746769
+	item osd.37 weight 7.327244
+	item osd.38 weight 6.285523
+}
+host host-7 {
+	alg straw
+	hash 0
+	item osd.39 weight 3.268404
+	item osd.40 weight 2.156050
+	item osd.41 weight 6.206482
+	item osd.42 weight 4.909659
+	item osd.43 weight 8.040302
+	item osd.44 weight 6.998953
+	item osd.45 weight 8.194677
+	item osd.46 weight 5.894058
+}
+host host-8 {
+	alg straw
+	hash 0
+	item osd.47 weight 9.009396
+	item osd.48 weight 5.683424
+	item osd.49 weight 1.230465
+	item osd.50 weight 0.048486
+	item osd.51 weight 5.856696
+}
+host host-9 {
+	alg straw
+	hash 0
+	item osd.52 weight 0.115697
+	item osd.53 weight 3.799017
+}
+host host-10 {
+	alg straw
+	hash 0
+	item osd.54 weight 0.007223
+	item osd.55 weight 2.828485
+	item osd.56 weight 2.104591
+	item osd.57 weight 0.513416
+	item osd.58 weight 0.370818
+	item osd.59 weight 8.087011
+	item osd.60 weight 0.717425
+}
+host host-11 {
+	alg straw
+	hash 0
+	item osd.61 weight 0.303639
+	item osd.62 weight 9.011508
+}
+host host-12 {
+	alg straw
+	hash 0
+	item osd.63 weight 4.333244
+	item osd.64 weight 4.716990
+	item osd.65 weight 6.459614
+	item osd.66 weight 2.823380
+}
+host host-13 {
+	alg straw
+	hash 0
+	item osd.67 weight 6.463759
+	item osd.68 weight 3.786858
+	item osd.69 weight 9.108903
+	item osd.70 weight 9.732162
+}
+host host-14 {
+	alg straw
+	hash 0
+	item osd.71 weight 5.942908
+	item osd.72 weight 5.315385
+	item osd.73 weight 4.641822
+}
+host host-15 {
+	alg straw
+	hash 0
+	item osd.74 weight 3.983210
+	item osd.75 weight 2.314337
+}
+host host-16 {
+	alg straw
+	hash 0
+	item osd.76 weight 2.836500
+	item osd.77 weight 9.877269
+}
+host host-17 {
+	alg straw
+	hash 0
+	item osd.78 weight 1.323733
+	item osd.79 weight 8.519924
+	item osd.80 weight 1.107734
+	item osd.81 weight 1.372219
+	item osd.82 weight 4.376620
+	item osd.83 weight 1.223431
+	item osd.84 weight 5.171237
+	item osd.85 weight 4.383843
+	item osd.86 weight 4.051917
+	item osd.87 weight 7.275827
+}
+
+datacenter dc-0 {
+	alg straw
+	hash 0
+	item host-0 weight 49.240288
+	item host-1 weight 6.350441
+}
+datacenter dc-1 {
+	alg straw
+	hash 0
+	item host-2 weight 18.238937
+	item host-3 weight 20.637966
+	item host-4 weight 34.859615
+}
+datacenter dc-2 {
+	alg straw
+	hash 0
+	item host-5 weight 28.201900
+	item host-6 weight 35.711128
+}
+datacenter dc-3 {
+	alg straw
+	hash 0
+	item host-7 weight 45.668587
+	item host-8 weight 21.828466
+	item host-9 weight 3.914714
+	item host-10 weight 14.628969
+	item host-11 weight 9.315147
+	item host-12 weight 18.333227
+	item host-13 weight 29.091682
+	item host-14 weight 15.900115
+	item host-15 weight 6.297547
+	item host-16 weight 12.713769
+	item host-17 weight 38.806484
+}
+
+root default {
+	alg straw
+	hash 0
+	item dc-0 weight 55.590729
+	item dc-1 weight 73.736519
+	item dc-2 weight 63.913029
+	item dc-3 weight 216.498718
+}
+
+rule rule-0 {
+	ruleset 0
+	type replicated
+	min_size 0
+	max_size 10
+	step take default
+	step choose firstn 0 type datacenter
+	step chooseleaf firstn 1 type host
+	step emit
+}
+
+# end crush map

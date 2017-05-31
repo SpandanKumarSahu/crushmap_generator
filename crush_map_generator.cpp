@@ -49,33 +49,33 @@ string set_types(){
   return temp;
 }
 
-string add_root(int num, float ar_dc[]){
+string add_root(float weights[], int &num, string curr_bucket_type){
   string temp = string("root default {") + "\n" + "\talg straw" + "\n" + "\thash 0"+"\n";
   for(int i = 0; i < num; i++){
-    temp += string("\titem dc-") + to_string(i)+ " weight " + to_string(ar_dc[i])+"\n";
+    temp += string("\titem ") + curr_bucket_type + to_string(i)+ " weight " + to_string(weights[i])+"\n";
   }
   temp += string("}\n") +"\n";
   return temp;
 }
 
-string add_datacenters(float ar_hosts[], int num){
+string add_buckets(float weights[], int &num, string curr_bucket_type, string next_bucket_type){
+  int num_next;  // num_next represents the container buckets for the current set of buckets. 
   string temp;
-  int num_dc;
   if(num/3 > 0){
-    num_dc = rand()%(num/3) + 1;
+    num_next = rand()%(num/3) + 1;
   }else{
-    num_dc = rand()%((num+3)/3) + 1;
+    num_next = rand()%((num+3)/3) + 1;
   }
-  int n = num - (2*num_dc);
+  int n = num - (2*num_next);
   int ctr = 0;
-  float ar_dc[num_dc];
-  memset(ar_dc,0.0, sizeof(ar_dc));
+  float ar_next[num_next];
+  memset(ar_next, 0.0, sizeof(ar_next));
   if(float_rand() < overlap_prob){
-    for(int i = 0; i < num_dc; i++){
-      temp += string("datacenter dc-")+ to_string(i)+" {"+"\n"+"\talg straw"+"\n"+"\thash 0"+"\n";
-      for(int j =(n/3 > 0 ? ((i == num_dc-1)? 2+n:2 + rand()%(n/3)): 2+n) ; j > 0; j--){
-	ar_dc[i] += ar_hosts[ctr];
-	temp += string("\titem host-") + to_string(ctr) + " weight " + to_string(ar_hosts[j]) + "\n";
+    for(int i = 0; i < num_next; i++){
+      temp += next_bucket_type + to_string(i)+" {"+"\n"+"\talg straw"+"\n"+"\thash 0"+"\n";
+      for(int j =(n/3 > 0 ? ((i == num_next-1)? 2+n:2 + rand()%(n/3)): 2+n) ; j > 0; j--){
+	ar_next[i] += weights[ctr];
+	temp += string("\titem ")+ curr_bucket_type + to_string(ctr) + " weight " + to_string(weights[ctr]) + "\n";
 	ctr++;
 	n--;
       }
@@ -84,91 +84,42 @@ string add_datacenters(float ar_hosts[], int num){
     }
   }else{
     bool check[num];
+    vector<int>v;
     memset(check, false, sizeof(check));
-    for(int i = 0; i < num_dc-1; i++){
-      int num_hosts = rand()%num_dc + 1;
-      temp += string("datacenter dc-")+ to_string(i)+" {"+"\n"+"\talg straw"+"\n"+"\thash 0"+"\n";
-      for(int j = num_hosts; j > 0 ; j--){
+    for(int i = 0; i < num_next-1; i++){
+      int num_d = rand()%num_next + 1;
+      temp += next_bucket_type + to_string(i)+" {"+"\n"+"\talg straw"+"\n"+"\thash 0"+"\n";
+      v.clear();
+      for(int j = num_d; j > 0 ; j--){
 	n = rand()%num;
-        temp += string("\titem host-") + to_string(n) + " weight " + to_string(ar_hosts[n]) + "\n";
-	ar_dc[i] += ar_hosts[n];
+	while(find(v.begin(), v.end(), n) != v.end()){
+	  n = rand()%num;
+	}
+	v.push_back(n);
+        temp += string("\titem ")+ curr_bucket_type + to_string(n) + " weight " + to_string(weights[n]) + "\n";
+	ar_next[i] += weights[n];
 	check[n] = true;
       }
       temp += string("}")+"\n";
     }
-    temp += string("datacenter dc-")+ to_string(num_dc-1)+" {"+"\n"+"\talg straw"+"\n"+"\thash 0"+"\n";
-    temp += string("\titem host-0")+ " weight " + to_string(ar_hosts[0]) + "\n";
-    ar_dc[num_dc-1] += ar_hosts[0];
+    temp += next_bucket_type + to_string(num_next-1)+" {"+"\n"+"\talg straw"+"\n"+"\thash 0"+"\n";
+    temp += string("\titem ")+ curr_bucket_type + "0 weight " + to_string(weights[0]) + "\n";
+    ar_next[num_next-1] += weights[0];
     for(int i = 1; i < num; i++){
       if(check[i] == false){
-	temp += string("\titem host-")+ to_string(i)+" weight " + to_string(ar_hosts[i]) + "\n";
-	ar_dc[num_dc-1] += ar_hosts[i];
-      }
-    }
-    temp += string("}")+"\n\n";
-  }
-  temp += add_root(num_dc,ar_dc);
-  return temp;
-}
-
-string add_buckets(int num){
-  string temp = string("# buckets")+ "\n";
-
-  float ar_dev_weights[num];
-  for(int i = 0; i < num; i++)
-    ar_dev_weights[i] = float_rand()*10;
-  
-  // Adding host buckets.
-  int num_hosts;
-  if(num/3 > 0){
-    num_hosts = rand()%(num/3) + 1;
-  }else{
-    num_hosts = rand()%((num+3)/3) + 1;
-  }
-  int n = num - (2*num_hosts);
-  int ctr = 0;
-  float ar_hosts[num_hosts];
-  memset(ar_hosts,0.0, sizeof(ar_hosts));
-  if(float_rand() < overlap_prob){
-    for(int i = 0; i < num_hosts; i++){
-      temp += string("host host-")+ to_string(i)+" {"+"\n"+"\talg straw"+"\n"+"\thash 0"+"\n";
-      for(int j =(n/3 > 0 ? ((i == num_hosts-1)? 2+n:2 + rand()%(n/3)): 2+n) ; j > 0; j--){
-	ar_hosts[i] += ar_dev_weights[ctr];
-	temp += string("\titem osd.") + to_string(ctr) + " weight " + to_string(ar_dev_weights[j]) + "\n";
-	ctr++;
-	n--;
-      }
-      n+=2;
-      temp += string("}")+"\n";
-    }
-  }else{
-    bool check[num];
-    memset(check, false, sizeof(check));
-    for(int i = 0; i < num_hosts-1; i++){
-      int num_devices = rand()%num_hosts + 1;
-      temp += string("host host-")+ to_string(i)+" {"+"\n"+"\talg straw"+"\n"+"\thash 0"+"\n";
-      for(int j = num_devices; j > 0 ; j--){
-	n = rand()%num;
-        temp += string("\titem osd.") + to_string(n) + " weight " + to_string(ar_dev_weights[n]) + "\n";
-	ar_hosts[i] += ar_dev_weights[n];
-	check[n] = true;
-      }
-      temp += string("}")+"\n";
-    }
-    temp += string("host host-")+ to_string(num_hosts-1)+" {"+"\n"+"\talg straw"+"\n"+"\thash 0"+"\n";
-    temp += string("\titem osd.0")+ " weight " + to_string(ar_dev_weights[0]) + "\n";
-    ar_hosts[num_hosts-1] += ar_dev_weights[0];
-    for(int i = 1; i < num; i++){
-      if(check[i] == false){
-	temp += string("\titem osd")+ to_string(i)+" weight " + to_string(ar_dev_weights[i]) + "\n";
-	ar_hosts[num_hosts-1] += ar_dev_weights[i];
+	temp += string("\titem ")+ curr_bucket_type + to_string(i)+" weight " + to_string(weights[i]) + "\n";
+	ar_next[num_next-1] += weights[i];
       }
     }
     temp += string("}")+"\n";
   }
-
-  // Adding datacenter buckets
-  temp += "\n" + add_datacenters(ar_hosts, num_hosts);
+  temp += string("\n");
+  
+  // Update the values
+  num = num_next;
+  for(int i = 0; i < num; i++)
+    weights[i] = ar_next[i];
+  
   return temp;
 }
 
@@ -196,9 +147,18 @@ void create_crushmap(){
   int num_osd = rand()%100 + 1;
   s = s + add_devices(num_osd);
   s = s + set_types();
-  s = s + add_buckets(num_osd);
-  s = s + add_rules();
-  s = s + finish();
+
+  float weights[num_osd];
+  for(int i = 0; i < num_osd; i++)
+    weights[i] = float_rand()*10;
+
+  int n = num_osd;
+  s += string("# buckets")+ "\n";
+  s += add_buckets(weights, n, string("osd."), string("host host-"));
+  s += add_buckets(weights, n, string("host-"), string("datacenter dc-"));
+  s += add_root(weights, n, string("dc-"));
+  s += add_rules();
+  s += finish();
   write_to_file(s);
 }
 
