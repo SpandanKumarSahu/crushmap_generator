@@ -9,6 +9,19 @@ tunable chooseleaf_vary_r 0
 device 0 osd.0
 device 1 osd.1
 device 2 osd.2
+device 3 osd.3
+device 4 osd.4
+device 5 osd.5
+device 6 osd.6
+device 7 osd.7
+device 8 osd.8
+device 9 osd.9
+device 10 osd.10
+device 11 osd.11
+device 12 osd.12
+device 13 osd.13
+device 14 osd.14
+device 15 osd.15
 
 # types
 type 0 osd
@@ -25,21 +38,44 @@ type 8 root
 host host-0 {
 	alg straw
 	hash 0
-	item osd.0 weight 3.125369
-	item osd.1 weight 8.944886
-	item osd.2 weight 8.406420
+	item osd.13 weight 79.000000
+	item osd.1 weight 93.000000
+}
+host host-1 {
+	alg straw
+	hash 0
+	item osd.2 weight 65.000000
+}
+host host-2 {
+	alg straw
+	hash 0
+	item osd.0 weight 31.000000
+	item osd.3 weight 44.000000
+	item osd.4 weight 80.000000
+	item osd.5 weight 62.000000
+	item osd.6 weight 30.000000
+	item osd.7 weight 16.000000
+	item osd.8 weight 27.000000
+	item osd.9 weight 24.000000
+	item osd.10 weight 32.000000
+	item osd.11 weight 28.000000
+	item osd.12 weight 62.000000
+	item osd.14 weight 58.000000
+	item osd.15 weight 84.000000
 }
 
 datacenter dc-0 {
 	alg straw
 	hash 0
-	item host-0 weight 20.476675
+	item host-0 weight 172.000000
+	item host-1 weight 65.000000
+	item host-2 weight 578.000000
 }
 
 root default {
 	alg straw
 	hash 0
-	item dc-0 weight 20.476675
+	item dc-0 weight 815.000000
 }
 
 rule rule-0 {

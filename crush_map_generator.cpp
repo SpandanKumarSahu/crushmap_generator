@@ -150,7 +150,7 @@ void create_crushmap(){
 
   float weights[num_osd];
   for(int i = 0; i < num_osd; i++)
-    weights[i] = float_rand()*10;
+    weights[i] = (float) (rand()%1024 + 1);
 
   int n = num_osd;
   s += string("# buckets")+ "\n";

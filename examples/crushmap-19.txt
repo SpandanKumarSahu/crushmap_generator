@@ -67,6 +67,29 @@ device 57 osd.57
 device 58 osd.58
 device 59 osd.59
 device 60 osd.60
+device 61 osd.61
+device 62 osd.62
+device 63 osd.63
+device 64 osd.64
+device 65 osd.65
+device 66 osd.66
+device 67 osd.67
+device 68 osd.68
+device 69 osd.69
+device 70 osd.70
+device 71 osd.71
+device 72 osd.72
+device 73 osd.73
+device 74 osd.74
+device 75 osd.75
+device 76 osd.76
+device 77 osd.77
+device 78 osd.78
+device 79 osd.79
+device 80 osd.80
+device 81 osd.81
+device 82 osd.82
+device 83 osd.83
 
 # types
 type 0 osd
@@ -83,124 +106,242 @@ type 8 root
 host host-0 {
 	alg straw
 	hash 0
-	item osd.0 weight 2.995338
-	item osd.1 weight 0.757887
-	item osd.2 weight 2.737238
-	item osd.3 weight 2.741554
-	item osd.4 weight 2.093295
+	item osd.0 weight 58.000000
+	item osd.1 weight 49.000000
 }
 host host-1 {
 	alg straw
 	hash 0
-	item osd.5 weight 0.707241
-	item osd.6 weight 4.439618
-	item osd.7 weight 6.681124
-	item osd.8 weight 9.300965
-	item osd.9 weight 1.448410
-	item osd.10 weight 0.174871
-	item osd.11 weight 9.742786
-	item osd.12 weight 8.327997
-	item osd.13 weight 9.494554
+	item osd.2 weight 19.000000
+	item osd.3 weight 20.000000
+	item osd.4 weight 27.000000
+	item osd.5 weight 85.000000
+	item osd.6 weight 77.000000
 }
 host host-2 {
 	alg straw
 	hash 0
-	item osd.14 weight 0.023581
-	item osd.15 weight 7.029726
-	item osd.16 weight 0.369565
-	item osd.17 weight 4.172999
-	item osd.18 weight 3.805595
-	item osd.19 weight 6.768346
-	item osd.20 weight 4.047708
-	item osd.21 weight 4.673554
+	item osd.7 weight 67.000000
+	item osd.8 weight 61.000000
+	item osd.9 weight 47.000000
+	item osd.10 weight 46.000000
+	item osd.11 weight 84.000000
+	item osd.12 weight 62.000000
+	item osd.13 weight 13.000000
+	item osd.14 weight 72.000000
 }
 host host-3 {
 	alg straw
 	hash 0
-	item osd.22 weight 6.515742
-	item osd.23 weight 2.541177
+	item osd.15 weight 79.000000
+	item osd.16 weight 36.000000
+	item osd.17 weight 78.000000
 }
 host host-4 {
 	alg straw
 	hash 0
-	item osd.24 weight 1.039837
-	item osd.25 weight 0.034059
-	item osd.26 weight 9.292837
-	item osd.27 weight 2.376450
-	item osd.28 weight 3.562238
-	item osd.29 weight 1.778546
-	item osd.30 weight 1.823025
-	item osd.31 weight 6.557577
-	item osd.32 weight 2.536433
+	item osd.18 weight 26.000000
+	item osd.19 weight 14.000000
+	item osd.20 weight 41.000000
+	item osd.21 weight 63.000000
 }
 host host-5 {
 	alg straw
 	hash 0
-	item osd.33 weight 4.560263
-	item osd.34 weight 9.299129
+	item osd.22 weight 35.000000
+	item osd.23 weight 33.000000
 }
 host host-6 {
 	alg straw
 	hash 0
-	item osd.35 weight 4.629728
-	item osd.36 weight 5.267504
-	item osd.37 weight 3.738749
-	item osd.38 weight 1.310852
-	item osd.39 weight 4.568470
+	item osd.24 weight 80.000000
+	item osd.25 weight 1.000000
+	item osd.26 weight 43.000000
+	item osd.27 weight 30.000000
 }
 host host-7 {
 	alg straw
 	hash 0
-	item osd.40 weight 5.187159
-	item osd.41 weight 1.485723
+	item osd.28 weight 61.000000
+	item osd.29 weight 89.000000
+	item osd.30 weight 65.000000
 }
 host host-8 {
 	alg straw
 	hash 0
-	item osd.42 weight 4.311256
-	item osd.43 weight 3.515156
-	item osd.44 weight 0.980276
-	item osd.45 weight 4.334837
-	item osd.46 weight 0.544882
-	item osd.47 weight 1.349842
+	item osd.31 weight 19.000000
+	item osd.32 weight 37.000000
+	item osd.33 weight 83.000000
+	item osd.34 weight 90.000000
+	item osd.35 weight 63.000000
 }
 host host-9 {
 	alg straw
 	hash 0
-	item osd.48 weight 8.507835
-	item osd.49 weight 4.350477
-	item osd.50 weight 8.118188
-	item osd.51 weight 2.555544
-	item osd.52 weight 9.024032
-	item osd.53 weight 4.633930
-	item osd.54 weight 5.096721
-	item osd.55 weight 0.063868
-	item osd.56 weight 4.667989
-	item osd.57 weight 4.389559
-	item osd.58 weight 2.440319
-	item osd.59 weight 8.230227
-	item osd.60 weight 6.168104
+	item osd.36 weight 19.000000
+	item osd.37 weight 18.000000
+	item osd.38 weight 81.000000
+	item osd.39 weight 80.000000
+}
+host host-10 {
+	alg straw
+	hash 0
+	item osd.40 weight 17.000000
+	item osd.41 weight 79.000000
+	item osd.42 weight 15.000000
+	item osd.43 weight 78.000000
+}
+host host-11 {
+	alg straw
+	hash 0
+	item osd.44 weight 91.000000
+	item osd.45 weight 86.000000
+}
+host host-12 {
+	alg straw
+	hash 0
+	item osd.46 weight 8.000000
+	item osd.47 weight 78.000000
+	item osd.48 weight 16.000000
+}
+host host-13 {
+	alg straw
+	hash 0
+	item osd.49 weight 33.000000
+	item osd.50 weight 43.000000
+	item osd.51 weight 56.000000
+}
+host host-14 {
+	alg straw
+	hash 0
+	item osd.52 weight 47.000000
+	item osd.53 weight 78.000000
+}
+host host-15 {
+	alg straw
+	hash 0
+	item osd.54 weight 41.000000
+	item osd.55 weight 79.000000
+	item osd.56 weight 30.000000
+}
+host host-16 {
+	alg straw
+	hash 0
+	item osd.57 weight 83.000000
+	item osd.58 weight 8.000000
+}
+host host-17 {
+	alg straw
+	hash 0
+	item osd.59 weight 90.000000
+	item osd.60 weight 23.000000
+}
+host host-18 {
+	alg straw
+	hash 0
+	item osd.61 weight 73.000000
+	item osd.62 weight 60.000000
+}
+host host-19 {
+	alg straw
+	hash 0
+	item osd.63 weight 11.000000
+	item osd.64 weight 7.000000
+}
+host host-20 {
+	alg straw
+	hash 0
+	item osd.65 weight 2.000000
+	item osd.66 weight 25.000000
+}
+host host-21 {
+	alg straw
+	hash 0
+	item osd.67 weight 26.000000
+	item osd.68 weight 19.000000
+}
+host host-22 {
+	alg straw
+	hash 0
+	item osd.69 weight 5.000000
+	item osd.70 weight 57.000000
+}
+host host-23 {
+	alg straw
+	hash 0
+	item osd.71 weight 35.000000
+	item osd.72 weight 83.000000
+}
+host host-24 {
+	alg straw
+	hash 0
+	item osd.73 weight 71.000000
+	item osd.74 weight 65.000000
+}
+host host-25 {
+	alg straw
+	hash 0
+	item osd.75 weight 26.000000
+	item osd.76 weight 8.000000
+}
+host host-26 {
+	alg straw
+	hash 0
+	item osd.77 weight 72.000000
+	item osd.78 weight 3.000000
+	item osd.79 weight 23.000000
+	item osd.80 weight 5.000000
+	item osd.81 weight 46.000000
+	item osd.82 weight 31.000000
+	item osd.83 weight 3.000000
 }
 
 datacenter dc-0 {
 	alg straw
 	hash 0
-	item host-0 weight 11.325313
-	item host-1 weight 50.317566
-	item host-2 weight 30.891075
-	item host-3 weight 9.056919
-	item host-4 weight 29.001001
-	item host-5 weight 13.859392
-	item host-6 weight 19.515303
-	item host-7 weight 6.672881
-	item host-8 weight 15.036250
-	item host-9 weight 68.246796
+	item host-0 weight 107.000000
+	item host-1 weight 228.000000
+	item host-2 weight 452.000000
+	item host-3 weight 193.000000
+	item host-4 weight 144.000000
+	item host-5 weight 68.000000
+	item host-6 weight 154.000000
+	item host-7 weight 215.000000
+}
+datacenter dc-1 {
+	alg straw
+	hash 0
+	item host-8 weight 292.000000
+	item host-9 weight 198.000000
+	item host-10 weight 189.000000
+	item host-11 weight 177.000000
+	item host-12 weight 102.000000
+}
+datacenter dc-2 {
+	alg straw
+	hash 0
+	item host-13 weight 132.000000
+	item host-14 weight 125.000000
+	item host-15 weight 150.000000
+	item host-16 weight 91.000000
+	item host-17 weight 113.000000
+	item host-18 weight 133.000000
+	item host-19 weight 18.000000
+	item host-20 weight 27.000000
+	item host-21 weight 45.000000
+	item host-22 weight 62.000000
+	item host-23 weight 118.000000
+	item host-24 weight 136.000000
+	item host-25 weight 34.000000
+	item host-26 weight 183.000000
 }
 
 root default {
 	alg straw
 	hash 0
-	item dc-0 weight 253.922501
+	item dc-0 weight 1561.000000
+	item dc-1 weight 958.000000
+	item dc-2 weight 1367.000000
 }
 
 rule rule-0 {

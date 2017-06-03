@@ -12,13 +12,6 @@ device 2 osd.2
 device 3 osd.3
 device 4 osd.4
 device 5 osd.5
-device 6 osd.6
-device 7 osd.7
-device 8 osd.8
-device 9 osd.9
-device 10 osd.10
-device 11 osd.11
-device 12 osd.12
 
 # types
 type 0 osd
@@ -35,36 +28,29 @@ type 8 root
 host host-0 {
 	alg straw
 	hash 0
-	item osd.0 weight 4.491848
-	item osd.1 weight 8.332737
+	item osd.5 weight 85.000000
+	item osd.1 weight 49.000000
 }
 host host-1 {
 	alg straw
 	hash 0
-	item osd.2 weight 0.974987
-	item osd.3 weight 0.937704
-	item osd.4 weight 8.094104
-	item osd.5 weight 0.435988
-	item osd.6 weight 0.489717
-	item osd.7 weight 7.435358
-	item osd.8 weight 0.239826
-	item osd.9 weight 2.288766
-	item osd.10 weight 5.405430
-	item osd.11 weight 6.206652
-	item osd.12 weight 5.739161
+	item osd.0 weight 19.000000
+	item osd.2 weight 68.000000
+	item osd.3 weight 26.000000
+	item osd.4 weight 6.000000
 }
 
 datacenter dc-0 {
 	alg straw
 	hash 0
-	item host-0 weight 12.824585
-	item host-1 weight 38.247688
+	item host-0 weight 134.000000
+	item host-1 weight 119.000000
 }
 
 root default {
 	alg straw
 	hash 0
-	item dc-0 weight 51.072273
+	item dc-0 weight 253.000000
 }
 
 rule rule-0 {
