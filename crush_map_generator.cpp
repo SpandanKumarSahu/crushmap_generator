@@ -1,3 +1,13 @@
+/*
+  Author : Spandan Kumar Sahu
+  Notes :
+  1. Refer http://libcrush.org/main/libcrush/wikis/home for information on how to leverage libcrush to make crushmaps.
+  2. Crushtool (refer  http://docs.ceph.com/docs/master/man/8/crushtool/) can also be used to create crushmaps
+  3. Crushtool in its current form only supports uniform weights and distribution. This code generates a wide variety of crush
+  maps, including very skewed ones.
+*/
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -150,7 +160,7 @@ void create_crushmap(){
 
   float weights[num_osd];
   for(int i = 0; i < num_osd; i++)
-    weights[i] = (float) (rand()%1024 + 1);
+    weights[i] = (float) (rand()%100 + 1);
 
   int n = num_osd;
   s += string("# buckets")+ "\n";

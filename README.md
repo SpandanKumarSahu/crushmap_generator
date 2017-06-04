@@ -1,3 +1,9 @@
+# Using Makefile
+`make cmg` : To compile and run the `crush_map_generator`
+`make examples`: To compile the crushmaps in examples/ folder
+`make generate`: To compile the crushmaps in crushmaps/ folder
+Other commands can be found in the Makefile.
+
 # One Step Solution
 `./generate.sh`
 
