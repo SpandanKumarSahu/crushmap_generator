@@ -82,7 +82,7 @@ string add_buckets(float weights[], int &num, string curr_bucket_type, string ne
   memset(ar_next, 0.0, sizeof(ar_next));
   if(float_rand() < overlap_prob){
     for(int i = 0; i < num_next; i++){
-      temp += next_bucket_type + to_string(i)+" {"+"\n"+"\talg straw"+"\n"+"\thash 0"+"\n";
+      temp += next_bucket_type + to_string(i)+" {"+"\n"+"\talg straw2"+"\n"+"\thash 0"+"\n";
       for(int j =(n/3 > 0 ? ((i == num_next-1)? 2+n:2 + rand()%(n/3)): 2+n) ; j > 0; j--){
 	ar_next[i] += weights[ctr];
 	temp += string("\titem ")+ curr_bucket_type + to_string(ctr) + " weight " + to_string(weights[ctr]) + "\n";
@@ -98,7 +98,7 @@ string add_buckets(float weights[], int &num, string curr_bucket_type, string ne
     memset(check, false, sizeof(check));
     for(int i = 0; i < num_next-1; i++){
       int num_d = rand()%num_next + 1;
-      temp += next_bucket_type + to_string(i)+" {"+"\n"+"\talg straw"+"\n"+"\thash 0"+"\n";
+      temp += next_bucket_type + to_string(i)+" {"+"\n"+"\talg straw2"+"\n"+"\thash 0"+"\n";
       v.clear();
       for(int j = num_d; j > 0 ; j--){
 	n = rand()%num;
@@ -112,7 +112,7 @@ string add_buckets(float weights[], int &num, string curr_bucket_type, string ne
       }
       temp += string("}")+"\n";
     }
-    temp += next_bucket_type + to_string(num_next-1)+" {"+"\n"+"\talg straw"+"\n"+"\thash 0"+"\n";
+    temp += next_bucket_type + to_string(num_next-1)+" {"+"\n"+"\talg straw2"+"\n"+"\thash 0"+"\n";
     temp += string("\titem ")+ curr_bucket_type + "0 weight " + to_string(weights[0]) + "\n";
     ar_next[num_next-1] += weights[0];
     for(int i = 1; i < num; i++){
